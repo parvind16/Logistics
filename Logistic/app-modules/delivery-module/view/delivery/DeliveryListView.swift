@@ -46,7 +46,7 @@ class DeliveryListView: UIView {
         deliveryTableView.register(DeliveryCell.self, forCellReuseIdentifier: ViewIdentifier.kTableViewCellIdentifier)
         deliveryTableView.allowsSelection = true
         deliveryTableView.backgroundColor = UIColor.lightText
-        deliveryTableView.separatorStyle = .none
+        deliveryTableView.separatorStyle = .singleLine
         deliveryTableView.rowHeight = UITableView.automaticDimension
         deliveryTableView.estimatedRowHeight = NumericConstants.kEstimatedRowHeight
 
@@ -106,7 +106,7 @@ class DeliveryListView: UIView {
         if hasNextPage {
             let view = UIActivityIndicatorView(frame: CGRect(x: .kXZero, y: .kYZero, width: .kActivityViewWidth, height: .kActivityViewHeight))
             view.style = .whiteLarge
-            view.tintColor = .red
+            view.color = .gray
             view.startAnimating()
             self.deliveryTableView?.tableFooterView = view
         } else {

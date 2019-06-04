@@ -58,7 +58,7 @@ class DeliveryCell: UITableViewCell {
         
         self.imageIconView?.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, topConstant: 10, leftConstant: 15, bottomConstant: 0, rightConstant: 0, widthConstant: NumericConstants.kCellImageWidth, heightConstant: NumericConstants.kCellImageHeight)
         
-        self.descriptionLabel?.anchor(top: self.imageIconView?.topAnchor, left: self.imageIconView?.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 10, bottomConstant: 10, rightConstant: 20, widthConstant: 0, heightConstant: 0)
+        self.descriptionLabel?.anchor(top: self.imageIconView?.topAnchor, left: self.imageIconView?.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 10, bottomConstant: 10, rightConstant: 30, widthConstant: 0, heightConstant: 0)
         
       self.descriptionLabel?.heightAnchor.constraint(greaterThanOrEqualToConstant: NumericConstants.kdescriptionLblMinHeightConstant).isActive = true
         

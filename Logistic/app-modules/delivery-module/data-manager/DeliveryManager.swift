@@ -45,7 +45,7 @@ class DeliveryManager: DeliveryItemsDownloadingProtocol, DeliveryItemsRetrieving
                 completion(items, AlertMessage.success)
                
             case .failure(let error):
-                completion(nil, AlertMessage.requestFailure)
+                completion(nil, error.localizedDescription)
 
                 debugPrint(error)
             }
