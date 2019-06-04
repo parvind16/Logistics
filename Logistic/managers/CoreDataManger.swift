@@ -79,26 +79,6 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
-    private func createRecordForEntity(_ entity: String, _ record: DeliveryModel, inManagedObjectContext managedObjectContext: NSManagedObjectContext) -> NSManagedObject? {
-        // Helpers
-        var result: NSManagedObject?
-        // Create Entity Description
-        let entityDescription = NSEntityDescription.entity(forEntityName: entity, in: managedObjectContext)
-        if let entityDescription = entityDescription {
-            // Create Managed Object
-            result = NSManagedObject(entity: entityDescription, insertInto: managedObjectContext)
-            result?.setValue(record.id, forKeyPath: kID)
-            result?.setValue(record.descriptionText, forKeyPath: kDescription)
-            result?.setValue(record.imageUrl, forKeyPath: kImageUrl)
-            if let location =  record.location, let locationObj = self.saveLocationObject(location: location, context: managedObjectContext) {
-                result?.setValue(locationObj, forKeyPath: kLocation)
-
-            }
-        }
-    
-        return result
-    }
-    
     private func saveLocationObject(location: Location, context: NSManagedObjectContext) -> LocationEntity? {
         let context = context
         let entityDescription = NSEntityDescription.entity(forEntityName: String(describing: LocationEntity.self), in: context)
@@ -132,14 +112,20 @@ class CoreDataManager: CoreDataManagerProtocol {
     }
     
     private func saveRecord(_ record: DeliveryModel) {
-        // Fetch Delivery Records
-        let lists = fetchRecordsForEntity(String(describing: DeliveryEntity.self), inManagedObjectContext: self.backgroundContext)
-        if let listRecord = createRecordForEntity(String(describing: DeliveryEntity.self), record, inManagedObjectContext: self.backgroundContext) {
-            if !lists.contains(listRecord) {
-               // list = listRecord
-                saveContext(self.backgroundContext)
-
+        var result: NSManagedObject?
+        // Create Entity Description
+        let entityDescription = NSEntityDescription.entity(forEntityName: String(describing: DeliveryEntity.self), in: backgroundContext)
+        if let entityDescription = entityDescription {
+            // Create Managed Object
+            result = NSManagedObject(entity: entityDescription, insertInto: backgroundContext)
+            result?.setValue(record.id, forKeyPath: kID)
+            result?.setValue(record.descriptionText, forKeyPath: kDescription)
+            result?.setValue(record.imageUrl, forKeyPath: kImageUrl)
+            if let location =  record.location, let locationObj = self.saveLocationObject(location: location, context: backgroundContext) {
+                result?.setValue(locationObj, forKeyPath: kLocation)
+                
             }
+            saveContext(self.backgroundContext)
         }
     }
     

@@ -42,7 +42,7 @@ class DeliveryListViewController: UIViewController {
             guard let unownedSelf = self else {
                 return
             }
-            unownedSelf.presentor?.startFetchingDeliverList(true, loadMore: false)
+            unownedSelf.presentor?.startFetchingDeliverList(false, loadMore: false)
         }
 
     }

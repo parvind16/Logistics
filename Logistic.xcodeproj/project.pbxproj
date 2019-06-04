@@ -181,6 +181,31 @@
 			path = constants;
 			sourceTree = "<group>";
 		};
+		511E50DB22A6A7C100DBA58B /* delivery-tests */ = {
+			isa = PBXGroup;
+			children = (
+				51AE178422A4F3F8003BD2D3 /* DeliveryPresenterTests.swift */,
+				51AE178322A4F3F8003BD2D3 /* DeliveryInteractorTests.swift */,
+			);
+			path = "delivery-tests";
+			sourceTree = "<group>";
+		};
+		511E50DC22A6A81A00DBA58B /* detail-tests */ = {
+			isa = PBXGroup;
+			children = (
+				51AE177A22A4F2F9003BD2D3 /* DeliveryDetailViewTests.swift */,
+			);
+			path = "detail-tests";
+			sourceTree = "<group>";
+		};
+		511E50DD22A6A85E00DBA58B /* config */ = {
+			isa = PBXGroup;
+			children = (
+				517564F9228D72C80088503F /* Info.plist */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
 		517564D3228D72C30088503F = {
 			isa = PBXGroup;
 			children = (
@@ -206,13 +231,13 @@
 		517564DE228D72C30088503F /* Logistic */ = {
 			isa = PBXGroup;
 			children = (
+				51756533228E83FF0088503F /* common */,
+				5175651D228E83B50088503F /* app-modules */,
 				51AE1755229A4AC6003BD2D3 /* managers */,
 				51756553228FF35D0088503F /* extension */,
-				5175654B228FF2DB0088503F /* localization */,
 				51756541228E90B20088503F /* utilities */,
-				5175651D228E83B50088503F /* app-modules */,
+				5175654B228FF2DB0088503F /* localization */,
 				51756536228E846A0088503F /* config */,
-				51756533228E83FF0088503F /* common */,
 				51756510228D73CA0088503F /* resource */,
 			);
 			path = Logistic;
@@ -221,11 +246,10 @@
 		517564F6228D72C80088503F /* LogisticTests */ = {
 			isa = PBXGroup;
 			children = (
+				511E50DD22A6A85E00DBA58B /* config */,
 				5108845A2293FC03004FEC5A /* mockdata */,
 				51AE178722A4F57F003BD2D3 /* mocks */,
-				51AE177822A4F2F9003BD2D3 /* testcase */,
-				51AE176C229C12D9003BD2D3 /* manager */,
-				517564F9228D72C80088503F /* Info.plist */,
+				51AE177822A4F2F9003BD2D3 /* delivery-module-tests */,
 			);
 			path = LogisticTests;
 			sourceTree = "<group>";
@@ -403,23 +427,23 @@
 			path = "delivery-detail";
 			sourceTree = "<group>";
 		};
-		51AE176C229C12D9003BD2D3 /* manager */ = {
+		51AE176C229C12D9003BD2D3 /* manager-tests */ = {
 			isa = PBXGroup;
 			children = (
 				51AE176D229C12D9003BD2D3 /* CoreDataManagerTests.swift */,
 				51AE176E229C12D9003BD2D3 /* DeliveryManagerSpec.swift */,
 			);
-			path = manager;
+			path = "manager-tests";
 			sourceTree = "<group>";
 		};
-		51AE177822A4F2F9003BD2D3 /* testcase */ = {
+		51AE177822A4F2F9003BD2D3 /* delivery-module-tests */ = {
 			isa = PBXGroup;
 			children = (
-				51AE178322A4F3F8003BD2D3 /* DeliveryInteractorTests.swift */,
-				51AE178422A4F3F8003BD2D3 /* DeliveryPresenterTests.swift */,
-				51AE177A22A4F2F9003BD2D3 /* DeliveryDetailViewTests.swift */,
+				511E50DB22A6A7C100DBA58B /* delivery-tests */,
+				511E50DC22A6A81A00DBA58B /* detail-tests */,
+				51AE176C229C12D9003BD2D3 /* manager-tests */,
 			);
-			path = testcase;
+			path = "delivery-module-tests";
 			sourceTree = "<group>";
 		};
 		51AE178722A4F57F003BD2D3 /* mocks */ = {
@@ -1030,7 +1054,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LogisticTests/Info.plist;
+				INFOPLIST_FILE = LogisticTests/config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1051,7 +1075,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LogisticTests/Info.plist;
+				INFOPLIST_FILE = LogisticTests/config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -46,7 +46,6 @@ class DeliveryManager: DeliveryItemsDownloadingProtocol, DeliveryItemsRetrieving
                
             case .failure(let error):
                 completion(nil, error.localizedDescription)
-
                 debugPrint(error)
             }
         }
