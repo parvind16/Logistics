@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Logistic
+
+  Created by parvind bhatt  on 16/05/19.
+  Copyright © 2019 "". All rights reserved.
+*/
+
+"noMoreResult" = "No more results";
+"noResultFound" = "No result found, Pull down to refresh";
+"navigationTitle" = "Things to Deliver";
+"detailNavigationTitle" = "Delivery Details";
+"loading" = "Loading";
+"Refreshingdeliverylist" = "Refreshing delivery list";
+"alert" = "Alert";
+"okay" = "Okay";
+"loadingText" = "Please wait..";
+"noNetworkMessage" = "The Internet connection appears to be offline";
+"alertButtonTitle" = "Okay";
+"retryButtonTitle" = "Retry";
