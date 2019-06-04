@@ -47,9 +47,9 @@ class DeliveryManagerSpec: QuickSpec {
                 
                 it("should not get delivery list") {
                     usersHandler.downloadDeliveryItems(1) { (items, errorMessage) in
-                        debugPrint(errorMessage ?? "")
+                        let error = NSError(domain: AlertMessage.requestFailure, code: 500, userInfo: nil)
                         expect(items).to(beNil())
-                        //expect(errorMessage).to(equal("Request Failure"))
+                        expect(errorMessage).to(equal(error.localizedDescription))
                         
                     }
                     
