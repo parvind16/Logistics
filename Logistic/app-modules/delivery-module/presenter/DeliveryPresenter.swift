@@ -52,7 +52,7 @@ class DeliveryPresenter: DeliveryPresenterProtocol {
         return models.count
     }
     
-    private func handleDeliveryListResult(_ result: [DeliveryModel]?, message: String?, reset:Bool) {
+    private func handleDeliveryListResult(_ result: [DeliveryModel]?, message: String?, reset: Bool) {
        
         if let deliveries = result {
             if reset {
